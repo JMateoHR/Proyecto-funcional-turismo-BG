@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actividades - EASYMOVBG</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="hero">
+        <h1>Actividades en Bogotá</h1>
+        <p>Descubre eventos y actividades únicas en la ciudad.</p>
+        <nav>
+            <a href="index.html" class="btn-home">Inicio</a>
+            <a href="hoteles.html" class="btn-hoteles">Hoteles</a>
+            <a href="movilidad.html" class="btn-movilidad">Tipos de Movilidad</a>
+            <a href="vuelos.html" class="btn-vuelos">Vuelos</a>
+            <a href="actividades.html" class="btn-actividades">Actividades</a>
+            <a href="calendario.html" class="btn-calendario">Calendario</a>
+        </nav>
+        <!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendario - EASYMOVBG</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f4f4;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        .calendar {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 10px;
+            max-width: 600px;
+            margin: 20px auto;
+        }
+
+        .day {
+            background: #fff;
+            border: 1px solid #ddd;
+            padding: 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        .day:hover {
+            background: #0066cc;
+            color: #fff;
+        }
+
+        .selected {
+            background: #0066cc;
+            color: #fff;
+        }
+
+        #event-form {
+            margin-top: 20px;
+        }
+
+        #event-form input[type="text"] {
+            padding: 10px;
+            width: 80%;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        #event-form button {
+            padding: 10px 20px;
+            background: #0066cc;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #event-form button:hover {
+            background: #005bb5;
+        }
+
+        #events {
+            margin-top: 20px;
+            text-align: left;
+            max-width: 600px;
+            margin: 20px auto;
+        }
+
+        #events h2 {
+            color: #333;
+        }
+
+        .event {
+            background: #fff;
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Calendario Interactivo</h1>
+
+    <!-- Calendario -->
+    <div class="calendar" id="calendar">
+        <!-- Días generados dinámicamente -->
+    </div>
+
+    <!-- Formulario para agregar eventos -->
+    <form id="event-form" onsubmit="addEvent(event)">
+        <h2>Agregar Evento</h2>
+        <input type="text" id="event-name" placeholder="Descripción del evento" required>
+        <button type="submit">Agregar</button>
+    </form>
+
+    <!-- Lista de eventos -->
+    <div id="events">
+        <h2>Eventos Programados</h2>
+        <div id="event-list">
+            <!-- Eventos generados dinámicamente -->
+        </div>
+    </div>
+
+    <script>
+        const calendar = document.getElementById("calendar");
+        const eventForm = document.getElementById("event-form");
+        const eventNameInput = document.getElementById("event-name");
+        const eventList = document.getElementById("event-list");
+
+        let selectedDay = null;
+        const events = {}; // Objeto para almacenar eventos por día
+
+        // Generar el calendario
+        function generateCalendar() {
+            for (let day = 1; day <= 31; day++) {
+                const dayElement = document.createElement("div");
+                dayElement.classList.add("day");
+                dayElement.textContent = day;
+                dayElement.onclick = () => selectDay(day);
+                calendar.appendChild(dayElement);
+            }
+        }
+
+        // Seleccionar un día
+        function selectDay(day) {
+            // Desmarcar el día previamente seleccionado
+            if (selectedDay) {
+                document.querySelector(`.day.selected`)?.classList.remove("selected");
+            }
+
+            // Marcar el nuevo día seleccionado
+            selectedDay = day;
+            document.querySelectorAll(".day")[day - 1].classList.add("selected");
+        }
+
+        // Agregar un evento
+        function addEvent(e) {
+            e.preventDefault();
+            if (!selectedDay) {
+                alert("Por favor selecciona un día del calendario.");
+                return;
+            }
+
+            const eventName = eventNameInput.value.trim();
+            if (!eventName) return;
+
+            // Guardar el evento en el día correspondiente
+            if (!events[selectedDay]) {
+                events[selectedDay] = [];
+            }
+            events[selectedDay].push(eventName);
+
+            // Limpiar el formulario
+            eventNameInput.value = "";
+
+            // Actualizar la lista de eventos
+            renderEvents();
+        }
+
+        // Mostrar los eventos
+        function renderEvents() {
+            eventList.innerHTML = ""; // Limpiar la lista
+            for (const day in events) {
+                const dayEvents = events[day];
+                dayEvents.forEach((event) => {
+                    const eventElement = document.createElement("div");
+                    eventElement.classList.add("event");
+                    eventElement.textContent = `Día ${day}: ${event}`;
+                    eventList.appendChild(eventElement);
+                });
+            }
+        }
+
+        // Inicializar el calendario
+        generateCalendar();
+    </script>
+</body>
+</html>
+
+        
+    </header>
+
+    <main>
+        <section>
+            <h2>Eventos Destacados</h2>
+            <ul>
+                <li>Feria Internacional del Libro</li>
+                <li>Festival Iberoamericano de Teatro</li>
+                <li>Conciertos en el Movistar Arena</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2024 EASYMOVBG - Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>

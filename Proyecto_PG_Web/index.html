@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EASYMOVBG - Turismo en Bogotá</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="hero">
+        <h1>Bienvenido a EASYMOVBG</h1>
+        <p>Descubre Bogotá como nunca antes lo habías imaginado</p>
+
+        <!-- Botones de navegación -->
+        <nav>
+            <a href="hoteles.html" class="btn-hoteles">Hoteles</a>
+            <a href="movilidad.html" class="btn-movilidad">Tipos de Movilidad</a>
+            <a href="vuelos.html" class="btn-vuelos">Vuelos</a>
+            <a href="actividades.html" class="btn-actividades">Actividades</a>
+            <a href="calendario.html" class="btn-calendario">Calendario</a>
+        </nav>
+              
+    </header>
+
+    <main>
+        <!-- Lugares Destacados -->
+        <section id="destacados">
+            <h2>Lugares Destacados</h2>
+            <div class="destacados-grid">
+                <article>
+                    <h3>Monserrate</h3>
+                    <p>Una vista espectacular de Bogotá desde las alturas.</p>
+                    <img src="assets/cerro monserrate.jpg" alt="Monserrate" style="width:100%; border-radius: 8px;">
+                    <button class="ver-mas-btn" onclick="toggleMoreInfo('monserrate-info')">Ver más...</button>
+                    <div id="monserrate-info" class="more-info">
+                        <p><strong>Historia:</strong> El Cerro de Monserrate es uno de los destinos más icónicos de Bogotá...</p>
+                        <p><strong>Rutas:</strong> Se puede acceder en teleférico, funicular o caminando...</p>
+                        <a href="https://waze.com/ul?q=Monserrate%2C+Bogot%C3%A1" target="_blank">
+                            <button>Ver ruta en Waze</button>
+                        </a>
+                    </div>
+                </article>
+
+                <article>
+                    <h3>La Candelaria</h3>
+                    <p>El corazón cultural e histórico de la ciudad.</p>
+                    <img src="assets/La candelaria.jpg" alt="La Candelaria" style="width:100%; border-radius: 8px;">
+                    <button class="ver-mas-btn" onclick="toggleMoreInfo('candelaria-info')">Ver más...</button>
+                    <div id="candelaria-info" class="more-info">
+                        <p><strong>Historia:</strong> La Candelaria es el barrio más antiguo de Bogotá...</p>
+                        <p><strong>Rutas:</strong> Puedes explorar sus museos, plazas...</p>
+                        <a href="https://waze.com/ul?q=La+Candelaria%2C+Bogot%C3%A1" target="_blank">
+                            <button>Ver ruta en Waze</button>
+                        </a>
+                    </div>
+                </article>
+
+                <article>
+                    <h3>Parque Simón Bolívar</h3>
+                    <p>Un oasis natural en medio de la metrópoli.</p>
+                    <img src="assets/parque-simon-bolivar.jpg" alt="Parque Simón Bolívar" style="width:100%; border-radius: 8px;">
+                    <button class="ver-mas-btn" onclick="toggleMoreInfo('parque-info')">Ver más...</button>
+                    <div id="parque-info" class="more-info">
+                        <p><strong>Historia:</strong> El Parque Simón Bolívar es el principal parque urbano...</p>
+                        <p><strong>Rutas:</strong> Ofrece lagos, áreas para caminar...</p>
+                        <a href="https://waze.com/ul?q=Parque+Sim%C3%B3n+Bol%C3%ADvar%2C+Bogot%C3%A1" target="_blank">
+                            <button>Ver ruta en Waze</button>
+                        </a>
+                    </div>
+                </article>
+            </div>
+        </section>
+<section id="google-map">
+    <h2>Ubicación en Google Maps</h2>
+    <img src="assets/maps.png" alt="Mapa de Monserrate en Google Maps" style="width:100%; border-radius: 8px;">
+</section>
+
+    <footer>
+        <p>© 2024 EASYMOVBG - Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

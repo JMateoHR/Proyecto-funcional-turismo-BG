@@ -1,0 +1,261 @@
+/* Estilos generales */
+body {
+    font-family: 'Arial', sans-serif;
+    background-image: url('assets/monserrate.webp'); /* Fondo de agua */
+    background-size: cover; /* Asegura que el fondo cubra toda la pantalla */
+    background-position: center center; /* Centra el fondo */
+    background-attachment: fixed; /* Mantiene el fondo fijo mientras se hace scroll */
+    height: 100vh; /* Asegura que el fondo cubra toda la ventana */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    transition: opacity 1s ease-in-out; /* Para la transición de fade-out */
+    color: #333;
+}
+
+/* Fade-out class para la transición de login */
+.fade-out {
+    opacity: 0;
+    pointer-events: none; /* Desactiva los eventos mientras se desvanece */
+}
+
+/* Animación de entrada para la página principal (index.html) */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(50px); /* Desplaza desde abajo */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0); /* Vuelve a la posición original */
+    }
+}
+
+/* Body en index.html */
+body {
+    animation: fadeInUp 1s ease-out;
+}
+
+/* Formulario de inicio de sesión */
+#login-form {
+    display: inline-block;
+    text-align: left;
+    padding: 2em;
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#login-form label {
+    display: block;
+    margin-bottom: 0.5em;
+}
+
+#login-form input {
+    width: 100%;
+    padding: 0.8em;
+    margin-bottom: 1em;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+#login-form button {
+    background-color: #0066cc;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1.1em;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#login-form button:hover {
+    background-color: #0055b3;
+}
+
+#login-message {
+    font-size: 1.2em;
+    margin-top: 1em;
+    color: red;
+}
+
+/* Estilos para el botón "Ver más" */
+.ver-mas-btn {
+    background-color: #0066cc;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1em;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.ver-mas-btn:hover {
+    background-color: #0055b3;
+}
+
+/* Estilos para la información adicional */
+.more-info {
+    display: none; /* Ocultar la información adicional al principio */
+    margin-top: 1em;
+}
+
+.more-info img {
+    width: 100%;
+    border-radius: 8px;
+    margin-top: 1em;
+}
+
+/* El resto de los estilos para el contenido */
+header.hero {
+    background: url('assets/monserrate-background.jpg') no-repeat center center/cover;
+    color: #fff;
+    text-align: center;
+    padding: 4em 1em;
+}
+
+header.hero h1 {
+    font-size: 2.5em;
+}
+
+header.hero p {
+    font-size: 1.2em;
+}
+
+main {
+    padding: 2em;
+}
+
+section {
+    margin-bottom: 2em;
+}
+
+h2 {
+    color: #0066cc;
+    text-align: center;
+}
+
+.destacados-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5em;
+}
+
+.destacados-grid article {
+    background: #f4f4f4;
+    padding: 1em;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.galeria {
+    display: flex;
+    justify-content: center;
+    gap: 1em;
+}
+
+.galeria img {
+    width: 300px;
+    border-radius: 8px;
+}
+
+footer {
+    background: #333;
+    color: white;
+    text-align: center;
+    padding: 1em 0;
+    margin-top: 2em;
+}
+
+/* Estilo para el botón de Waze */
+#waze button {
+    background-color: #4CAF50; /* Verde de Waze */
+    color: white;
+    padding: 10px 20px;
+    font-size: 1.1em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+    margin: 1em 0;
+}
+
+#waze button:hover {
+    background-color: #45a049; /* Efecto hover */
+}
+/* Estilos para los botones de navegación */
+nav button {
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 10px;
+    font-size: 1.1em;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Botón de Hoteles */
+.btn-hoteles {
+    background-color: #0066cc; /* Azul */
+}
+
+.btn-hoteles:hover {
+    background-color: #0055b3; /* Efecto hover */
+}
+
+/* Botón de Movilidad */
+.btn-movilidad {
+    background-color: #f39c12; /* Naranja */
+}
+
+.btn-movilidad:hover {
+    background-color: #e67e22; /* Efecto hover */
+}
+
+/* Botón de Vuelos */
+.btn-vuelos {
+    background-color: #e74c3c; /* Rojo */
+}
+
+.btn-vuelos:hover {
+    background-color: #c0392b; /* Efecto hover */
+}
+
+/* Botón de Actividades */
+.btn-actividades {
+    background-color: #2ecc71; /* Verde */
+}
+
+.btn-actividades:hover {
+    background-color: #27ae60; /* Efecto hover */
+}
+
+/* Botón de Calendario */
+.btn-calendario {
+    background-color: #9b59b6; /* Morado */
+}
+
+.btn-calendario:hover {
+    background-color: #8e44ad; /* Efecto hover */
+}
+/* Botones de navegación */
+nav a {
+    display: inline-block;
+    margin: 10px;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: white;
+    background-color: #0066cc;
+    border-radius: 5px;
+    font-size: 1em;
+    text-align: center;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+}
+
+nav a:hover {
+    background-color: #0055b3;
+}

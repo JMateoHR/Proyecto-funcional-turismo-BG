@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hoteles - EASYMOVBG</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Estilo para las secciones de información adicional */
+        .more-info {
+            display: none; /* Oculta la información adicional inicialmente */
+            margin-top: 1em;
+            background: #f4f4f4;
+            padding: 1em;
+            border-radius: 8px;
+        }
+
+        .ver-mas-btn {
+            background-color: #0066cc;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1em;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-top: 1em;
+        }
+
+        .ver-mas-btn:hover {
+            background-color: #0055b3;
+        }
+    </style>
+</head>
+<body>
+    <header class="hero">
+        <h1>Hoteles Recomendados</h1>
+        <p>Descubre los mejores alojamientos en Bogotá.</p>
+
+        <!-- Botones de navegación -->
+        <nav>
+            <a href="index.html" class="btn-home">Inicio</a>
+            <a href="hoteles.html" class="btn-hoteles">Hoteles</a>
+            <a href="movilidad.html" class="btn-movilidad">Tipos de Movilidad</a>
+            <a href="vuelos.html" class="btn-vuelos">Vuelos</a>
+            <a href="actividades.html" class="btn-actividades">Actividades</a>
+            <a href="calendario.html" class="btn-calendario">Calendario</a>
+        </nav>
+    </header>
+
+    <main>
+        <section id="hoteles">
+            <h2>Hoteles Destacados</h2>
+
+            <!-- Hotel Bogotá Plaza -->
+            <article>
+                <h3>Hotel Bogotá Plaza - 5 estrellas</h3>
+                <img src="assets/hotel plaza.jpg" alt="Hotel Bogotá Plaza" style="width:500px; border-radius: 8px;">
+                <button class="ver-mas-btn" onclick="toggleMoreInfo('info-plaza')">Ver más...</button>
+                <div id="info-plaza" class="more-info">
+                    <p><strong>Ubicación:</strong> Norte de Bogotá, cerca del Parque 93.</p>
+                    <p><strong>Servicios:</strong> Spa, gimnasio, restaurante gourmet.</p>
+                    <p><strong>Precio promedio:</strong> $400,000 COP por noche.</p>
+                </div>
+            </article>
+
+            <!-- Hotel Movich Buró 26 -->
+            <article>
+                <h3>Movich Buró 26 - 4 estrellas</h3>
+                <img src="assets/hotel movich buro.jpg" alt="Movich Buró 26" style="width:500px; border-radius: 8px;">
+                <button class="ver-mas-btn" onclick="toggleMoreInfo('info-movich')">Ver más...</button>
+                <div id="info-movich" class="more-info">
+                    <p><strong>Ubicación:</strong> Cerca del Aeropuerto El Dorado.</p>
+                    <p><strong>Servicios:</strong> Transfer gratuito al aeropuerto, bar, sala de conferencias.</p>
+                    <p><strong>Precio promedio:</strong> $350,000 COP por noche.</p>
+                </div>
+            </article>
+
+            <!-- Hotel Estelar -->
+            <article>
+                <h3>Hotel Estelar - 4 estrellas</h3>
+                <img src="assets/hotel estelar.jpg" alt="Hotel Estelar" style="width:500px; border-radius: 8px;">
+                <button class="ver-mas-btn" onclick="toggleMoreInfo('info-estelar')">Ver más...</button>
+                <div id="info-estelar" class="more-info">
+                    <p><strong>Ubicación:</strong> Zona G, distrito gastronómico.</p>
+                    <p><strong>Servicios:</strong> Habitaciones amplias, desayuno incluido, terraza con vista.</p>
+                    <p><strong>Precio promedio:</strong> $300,000 COP por noche.</p>
+                </div>
+            </article>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2024 EASYMOVBG - Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        // Función para mostrar/ocultar la información adicional
+        function toggleMoreInfo(infoId) {
+            const infoElement = document.getElementById(infoId);
+            if (infoElement.style.display === "none" || infoElement.style.display === "") {
+                infoElement.style.display = "block"; // Muestra la información
+            } else {
+                infoElement.style.display = "none"; // Oculta la información
+            }
+        }
+    </script>
+</body>
+</html>
